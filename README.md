@@ -1,6 +1,6 @@
-# Project Title
+# Synthetic Bistable Switch Analysis
 
-Integrating and inferring parameters from the synthtetic bistable switch of Barbier, et al. 
+Integrating and inferring parameters from the synthtetic bistable switch described in the [paper](https://www.biorxiv.org/content/10.1101/849711v1) **Controlling spatiotemporal pattern formation in a concentration gradient with a synthetic toggle switch. I. Barbier, R. Perez-Carrasco, Y. Schaerli. BioArxiv (2020)**
 
 ## Description of files
 
@@ -28,3 +28,4 @@ See also the list of contributors to the main manuscript
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
+    
