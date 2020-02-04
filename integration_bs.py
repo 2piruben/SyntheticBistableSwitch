@@ -1794,11 +1794,10 @@ def getPositionBoundary(xarray,method='square'):
 
 
 def rotategradient(A,direction):
-  ''' Rotate a grid A created by integration_diffusion.
-  Direction indicated the diffusing direction 
-  can be 'left','up','down' and assumes that the original array diffuses from left to right
-  '''
-  
+    ''' Rotate a grid A created by integration_diffusion.
+    Direction indicated the diffusing direction 
+    can be 'left','up','down' and assumes that the original array diffuses from left to right
+    '''
     print("rotating gradient...")
     if direction == "left":
             N = int(np.sqrt(len(A[0])))
@@ -2008,53 +2007,41 @@ def xtocolor(Xarray,colormap = 'Reds', lim = [400.0,800.0]):
   ''' maps an array of floats into an array of colors
   for the colormap and boundaries lim chosen
   '''
-    return getattr(cm, colormap)((Xarray - lim[0])/(lim[1]-lim[0]))
+  return getattr(cm, colormap)((Xarray - lim[0])/(lim[1]-lim[0]))
 
 def xtocustomcolor(Xarray,color = [1,0,0], lim = [400.0,800.0]):
   ''' maps an array of floats into an array of colors
   that determine the intensity of the given color
   '''
 
-    Xarray_rescaled = ((Xarray - lim[0])/(lim[1]-lim[0]))
-    Xarray_rescaled = np.minimum(Xarray_rescaled,1)
-    Xarray_rescaled = np.maximum(Xarray_rescaled,0)
-    Xcolor = np.array([np.array(color)*X for X in Xarray_rescaled])
-    Xcolor = np.column_stack((Xcolor,np.ones_like(Xarray)))
-    return Xcolor
+  Xarray_rescaled = ((Xarray - lim[0])/(lim[1]-lim[0]))
+  Xarray_rescaled = np.minimum(Xarray_rescaled,1)
+  Xarray_rescaled = np.maximum(Xarray_rescaled,0)
+  Xcolor = np.array([np.array(color)*X for X in Xarray_rescaled])
+  Xcolor = np.column_stack((Xcolor,np.ones_like(Xarray)))
+  return Xcolor
 
 def mixcolor(Xarray,Yarray, mode = 'additive'):
   ''' function used to mix colors
   '''
-    if mode == 'additive':
-        C = Xarray + Yarray
-        for iel,el in enumerate(C):
-            C[iel] = np.minimum(C[iel],1.0) # if one of the coordinates is bigger than 1, then return 1
-        return C
+  if mode == 'additive':
+      C = Xarray + Yarray
+      for iel,el in enumerate(C):
+          C[iel] = np.minimum(C[iel],1.0) # if one of the coordinates is bigger than 1, then return 1
+      return C
 
-    if mode == 'additive_correct':
-        C = Xarray + Yarray - np.ones_like(Xarray)
-        for iel,el in enumerate(C):
-            C[iel] = np.minimum(C[iel],1.0) # if one of the coordinates is bigger than 1, then return 1
-        return C
+  if mode == 'additive_correct':
+      C = Xarray + Yarray - np.ones_like(Xarray)
+      for iel,el in enumerate(C):
+          C[iel] = np.minimum(C[iel],1.0) # if one of the coordinates is bigger than 1, then return 1
+      return C
 
-    if mode == 'multiplicative':
-        C = Xarray * Yarray
-        return C
+  if mode == 'multiplicative':
+      C = Xarray * Yarray
+      return C
 
-
-
-    elif mode == 'average':
-        return (Xarray + Yarray)/2.0
-
-
-
-
-
-
-    # 
-
-
-
+  elif mode == 'average':
+      return (Xarray + Yarray)/2.0
 
 
 
