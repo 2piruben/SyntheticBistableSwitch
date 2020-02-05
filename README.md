@@ -1,6 +1,6 @@
 # Synthetic Bistable Switch Analysis
 
-Integrating and inferring parameters from the synthtetic bistable switch described in the [paper](https://www.biorxiv.org/content/10.1101/849711v1) *Controlling spatiotemporal pattern formation in a concentration gradient with a synthetic toggle switch. I. Barbier, R. Perez-Carrasco, Y. Schaerli. BioArxiv (2020)*
+Integrating and inferring parameters from the synthtetic bistable switch described in the [paper](https://www.biorxiv.org/content/10.1101/849711v1) *Controlling spatiotemporal pattern formation in a concentration gradient with a synthetic toggle switch. I. Barbier, R. Perez-Carrasco, Y. Schaerli. BioRxiv (2019)*.
 
 ## Description of files
 
